@@ -1,0 +1,58 @@
+{
+  "name": "medic-mobile",
+  "version": "1.0.0",
+  "description": "Medic mobile assessment",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "convert": "ts-jest config:migrate ./jest.config.js",
+    "test": "jest --watch",
+    "coverage": "jest --collectCoverageFrom=src/**/*.ts --coverage",
+    "build": "rm -rf './dist' && tsc && node ./dist/index.js ",
+    "build:watch": "tsc -w",
+    "lint": "npm run lint:ts && npm run lint:prettier",
+    "lint:ts": "tsc --noEmit && eslint --ignore-path .gitignore --fix \"src/**/*.{js,jsx,tsx,ts}\"",
+    "lint:prettier": "prettier \"src/**/*.{js,jsx,tsx,ts,json,md}\" --list-different",
+    "start:prod": "nodemon src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@types/jest": "^24.0.12",
+    "@types/node": "^11.10.5",
+    "commander": "^5.0.0",
+    "papaparse": "^5.1.1",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.3333"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^4.2.3",
+    "jest": "^24.3.0",
+    "lint-staged": "^10.0.8",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,css,json,md}": [
+      "npm run lint",
+      "pretty-quick --staged",
+      "git add"
+    ]
+  }
+}

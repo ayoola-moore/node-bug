@@ -1,5 +1,9 @@
-export const add = (num1: number, num2: number): number => {
-  return num1 + num2;
-};
+#!/usr/bin/env node
 
-console.log(add(33, 7));
+const program = require('commander');
+const { version } = require('../package.json');
+
+// data
+program.version(version, '-v, --version', 'show version');
+
+program.parse(process.argv);

@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "Medic mobile assessment",
   "main": "src/index.js",
+  "keywords": [],
+  "author": "Ayoola Moore (Onaolapo)",
+  "license": "MIT",
+  "bin": {
+    "summarize": "./dist/index.js",
+    "list": "./dist/index.js"
+  },
   "scripts": {
     "start": "nodemon src/index.ts",
     "convert": "ts-jest config:migrate ./jest.config.js",
@@ -15,9 +22,6 @@
     "lint:prettier": "prettier \"src/**/*.{js,jsx,tsx,ts,json,md}\" --list-different",
     "start:prod": "nodemon src/index.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
@@ -25,6 +29,7 @@
     "@types/jest": "^24.0.12",
     "@types/node": "^11.10.5",
     "commander": "^5.0.0",
+    "ora": "^4.0.3",
     "papaparse": "^5.1.1",
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.3",

@@ -1,12 +1,17 @@
-const ora = require('ora');
+import ora from 'ora';
 
-const spinner = ora().start();
-
-export function makeSummary(csv: string) {
+export function makeSummary(csv: string): any {
+  const spinner = ora().start();
   setTimeout(() => {}, 3000);
+  spinner.stop();
   console.log('csv', csv);
 }
 
-spinner.stop();
-
-// exports.makeSummary;
+// module.exports = {
+//   makeSummary: (csv: string) => {
+//     const spinner = ora().start();
+//     setTimeout(() => {}, 3000);
+//     spinner.stop();
+//     console.log('csv', csv);
+//   },
+// };

@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = __importDefault(require("commander"));
 const makeSummary_1 = require("./makeSummary");
 const replaceFunction = () => console.log('nothing');
-console.log('dknsk');
 //commands
 commander_1.default
     .command('summarize')
@@ -20,5 +19,7 @@ commander_1.default
     console.log('  $ custom-help --help');
 })
     .action(makeSummary_1.makeSummary('summary'));
-commander_1.default.command('');
+console.log('desc', commander_1.default.description);
+console.log('desc', commander_1.default.input);
+console.log('output', commander_1.default.output);
 //# sourceMappingURL=index.js.map

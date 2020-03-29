@@ -1,17 +1,31 @@
-import ora from 'ora';
+const ora = require('ora');
+const Papa = require('papaparse');
+
+const spinner = ora('processing..');
+
+const parseCsv = (csv: string) => {
+  Papa.parse(csv, {
+    download: true,
+  });
+  // handle errors
+};
+
+const summarizeCsv = (json: string) => {
+  //logic
+  // handle errors
+};
+
+const convertToCsv = (csv: string) => {
+  // logic
+  // handle errors
+};
 
 export function makeSummary(csv: string): any {
-  const spinner = ora().start();
-  setTimeout(() => {}, 3000);
-  spinner.stop();
+  // spinner.start();
+  // const jsonOutput = parseCsv(csv);
+  // const summary = summarizeCsv(jsonOutput);
+  // convertToCsv(summary);
+  // spinner.stop();
+  // console.log('successful...');
   console.log('csv', csv);
 }
-
-// module.exports = {
-//   makeSummary: (csv: string) => {
-//     const spinner = ora().start();
-//     setTimeout(() => {}, 3000);
-//     spinner.stop();
-//     console.log('csv', csv);
-//   },
-// };

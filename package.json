@@ -7,8 +7,7 @@
   "author": "Ayoola Moore (Onaolapo)",
   "license": "MIT",
   "bin": {
-    "summarize": "./dist/index.js",
-    "list": "./dist/index.js"
+    "summarize": "./dist/index.js"
   },
   "scripts": {
     "start": "nodemon src/index.ts",
@@ -17,7 +16,7 @@
     "coverage": "jest --collectCoverageFrom=src/**/*.ts --coverage",
     "build": "rm -rf './dist' && tsc",
     "build:watch": "tsc -w",
-    "build:cmd": "npm run build && node ./dist/summarizeCSv/index.js summarize",
+    "build:cmd": "npm run build && nodemon ./dist/summarizeCSv/index.js summarize",
     "lint": "npm run lint:ts && npm run lint:prettier",
     "lint:ts": "tsc --noEmit && eslint --ignore-path .gitignore --fix \"src/**/*.{js,jsx,tsx,ts}\"",
     "lint:prettier": "prettier \"src/**/*.{js,jsx,tsx,ts,json,md}\" --list-different",
